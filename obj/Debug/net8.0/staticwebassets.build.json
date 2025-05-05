@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "nxJAxRMaMqOo+Iq8pZgNEoViCgZNolBFgkPsnkGUjBg=",
+  "Source": "BarberiaAPI",
+  "BasePath": "_content/BarberiaAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

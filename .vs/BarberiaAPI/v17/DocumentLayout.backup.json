@@ -1,0 +1,292 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\services\\barberiadatastore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:services\\barberiadatastore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\model\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:model\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\model\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:model\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\model\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:model\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\model\\horario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:model\\horario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\model\\gasto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:model\\gasto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\model\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:model\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\model\\turno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:model\\turno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\controllers\\turnoscontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:controllers\\turnoscontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\controllers\\usuarioscontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:controllers\\usuarioscontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\controllers\\rolescontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:controllers\\rolescontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\controllers\\pagoscontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:controllers\\pagoscontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\controllers\\horarioscontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:controllers\\horarioscontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\controllers\\gastoscontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:controllers\\gastoscontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\controllers\\clientescontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:controllers\\clientescontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|c:\\users\\usuario\\source\\repos\\barberiaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E67123-7DCA-4EBD-A707-FE6C920B0900}|BarberiaAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RolesControllers.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Controllers\\RolesControllers.cs",
+              "RelativeDocumentMoniker": "Controllers\\RolesControllers.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Controllers\\RolesControllers.cs",
+              "RelativeToolTip": "Controllers\\RolesControllers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T17:17:41.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HorariosControllers.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Controllers\\HorariosControllers.cs",
+              "RelativeDocumentMoniker": "Controllers\\HorariosControllers.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Controllers\\HorariosControllers.cs",
+              "RelativeToolTip": "Controllers\\HorariosControllers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T17:17:22.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Horario.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Model\\Horario.cs",
+              "RelativeDocumentMoniker": "Model\\Horario.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Model\\Horario.cs",
+              "RelativeToolTip": "Model\\Horario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T17:16:25.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Rol.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Model\\Rol.cs",
+              "RelativeDocumentMoniker": "Model\\Rol.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Model\\Rol.cs",
+              "RelativeToolTip": "Model\\Rol.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T17:15:27.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Model\\Usuario.cs",
+              "RelativeDocumentMoniker": "Model\\Usuario.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Model\\Usuario.cs",
+              "RelativeToolTip": "Model\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T17:13:09.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UsuariosControllers.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Controllers\\UsuariosControllers.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsuariosControllers.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Controllers\\UsuariosControllers.cs",
+              "RelativeToolTip": "Controllers\\UsuariosControllers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T17:10:45.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "GastosControllers.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Controllers\\GastosControllers.cs",
+              "RelativeDocumentMoniker": "Controllers\\GastosControllers.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Controllers\\GastosControllers.cs",
+              "RelativeToolTip": "Controllers\\GastosControllers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T05:59:11.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PagosControllers.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Controllers\\PagosControllers.cs",
+              "RelativeDocumentMoniker": "Controllers\\PagosControllers.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Controllers\\PagosControllers.cs",
+              "RelativeToolTip": "Controllers\\PagosControllers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T05:58:51.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TurnosControllers.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Controllers\\TurnosControllers.cs",
+              "RelativeDocumentMoniker": "Controllers\\TurnosControllers.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Controllers\\TurnosControllers.cs",
+              "RelativeToolTip": "Controllers\\TurnosControllers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T05:58:16.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ClientesControllers.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Controllers\\ClientesControllers.cs",
+              "RelativeDocumentMoniker": "Controllers\\ClientesControllers.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Controllers\\ClientesControllers.cs",
+              "RelativeToolTip": "Controllers\\ClientesControllers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T05:53:27.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BarberiaDataStore.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Services\\BarberiaDataStore.cs",
+              "RelativeDocumentMoniker": "Services\\BarberiaDataStore.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Services\\BarberiaDataStore.cs",
+              "RelativeToolTip": "Services\\BarberiaDataStore.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAB/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T05:48:08.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Gasto.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Model\\Gasto.cs",
+              "RelativeDocumentMoniker": "Model\\Gasto.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Model\\Gasto.cs",
+              "RelativeToolTip": "Model\\Gasto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T05:45:04.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Pago.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Model\\Pago.cs",
+              "RelativeDocumentMoniker": "Model\\Pago.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Model\\Pago.cs",
+              "RelativeToolTip": "Model\\Pago.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T05:44:54.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Turno.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Model\\Turno.cs",
+              "RelativeDocumentMoniker": "Model\\Turno.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Model\\Turno.cs",
+              "RelativeToolTip": "Model\\Turno.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T05:44:37.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Model\\Cliente.cs",
+              "RelativeDocumentMoniker": "Model\\Cliente.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Model\\Cliente.cs",
+              "RelativeToolTip": "Model\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T05:44:18.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\source\\repos\\BarberiaAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T05:41:32.439Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
