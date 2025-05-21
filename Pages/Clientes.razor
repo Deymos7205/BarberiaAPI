@@ -1,0 +1,256 @@
+﻿@page "/clientes"
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.EntityFrameworkCore
+@using BarberiaAPI.Data
+@using BarberiaAPI.Model
+@inject BarberiaContext db
+
+<h3>Clientes</h3>
+<button class="btn btn-success mb-3" @onclick="NuevoCliente">Agregar Cliente</button>
+
+@if (clientes == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cédula</th>
+                <th>Teléfono</th>
+                <th>Dirección</th>
+                <th>Preferencias</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in clientes)
+            {
+                <tr>
+                    <td>@c.Nombre</td>
+                    <td>@c.Cedula</td>
+                    <td>@c.Telefono</td>
+                    <td>@c.Direccion</td>
+                    <td>@c.Preferencias</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm me-2" @onclick="() => EditarCliente(c)">Editar</button>
+                        <button class="btn btn-danger btn-sm" @onclick="() => EliminarCliente(c.IdCliente)">Eliminar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (clienteActual != null)
+{
+    <EditForm Model="clienteActual" OnValidSubmit="GuardarCliente">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <InputText id="nombre" @bind-Value="clienteActual.Nombre" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="cedula" class="form-label">Cédula</label>
+            <InputText id="cedula" @bind-Value="clienteActual.Cedula" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <InputText id="telefono" @bind-Value="clienteActual.Telefono" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="direccion" class="form-label">Dirección</label>
+            <InputText id="direccion" @bind-Value="clienteActual.Direccion" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="preferencias" class="form-label">Preferencias</label>
+            <InputText id="preferencias" @bind-Value="clienteActual.Preferencias" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary me-2">Guardar</button>
+        <button type="button" class="btn btn-secondary" @onclick="CancelarEdicion">Cancelar</button>
+    </EditForm>
+}
+
+@code {
+    List<Cliente> clientes;
+    Cliente clienteActual;
+
+    protected override async Task OnInitializedAsync()
+    {
+        clientes = await db.Clientes.ToListAsync();
+    }
+
+    void NuevoCliente()
+    {
+        clienteActual = new Cliente();
+    }
+
+    void EditarCliente(Cliente c)
+    {
+        clienteActual = new Cliente
+            {
+                IdCliente = c.IdCliente,
+                Nombre = c.Nombre,
+                Cedula = c.Cedula,
+                Telefono = c.Telefono,
+                Direccion = c.Direccion,
+                Preferencias = c.Preferencias
+            };
+    }
+
+    async Task GuardarCliente()
+    {
+        if (clienteActual.IdCliente == 0)
+        {
+            db.Clientes.Add(clienteActual);
+        }
+        else
+        {
+            db.Clientes.Update(clienteActual);
+        }
+
+        await db.SaveChangesAsync();
+        clientes = await db.Clientes.ToListAsync();
+        clienteActual = null;
+    }
+
+    void CancelarEdicion()
+    {
+        clienteActual = null;
+    }
+
+    async Task EliminarCliente(int id)
+    {
+        var cliente = await db.Clientes.FindAsync(id);
+        if (cliente != null)
+        {
+            db.Clientes.Remove(cliente);
+            await db.SaveChangesAsync();
+            clientes = await db.Clientes.ToListAsync();
+        }
+    }
+}
+
+
+@* 
+
+@page "/clientes"
+@using Microsoft.AspNetCore.Components.Forms
+@using System.ComponentModel.DataAnnotations;
+@using Microsoft.EntityFrameworkCore
+@using BarberiaAPI.Data
+@using BarberiaAPI.Model
+@inject BarberiaContext db
+
+
+<h3>Clientes</h3>
+<button @onclick="NuevoCliente">Agregar Cliente</button>
+
+@if (clientes == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cédula</th>
+                <th>Teléfono</th>
+                <th>Dirección</th>
+                <th>Preferencias</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var c in clientes)
+        {
+            <tr>
+                <td>@c.Nombre</td>
+                <td>@c.Cedula</td>
+                <td>@c.Telefono</td>
+                <td>@c.Direccion</td>
+                <td>@c.Preferencias</td>
+                <td>
+                    <button @onclick="() => EditarCliente(c)">Editar</button>
+                    <button @onclick="() => EliminarCliente(c.Id_Cliente)">Eliminar</button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@if (clienteActual != null)
+{
+    <EditForm Model="clienteActual" OnValidSubmit="GuardarCliente">
+        <InputText @bind-Value="clienteActual.Nombre" />
+        <InputText @bind-Value="clienteActual.Cedula" />
+        <InputText @bind-Value="clienteActual.Telefono" />
+        <InputText @bind-Value="clienteActual.Direccion" />
+        <InputText @bind-Value="clienteActual.Preferencias" />
+        <button type="submit">Guardar</button>
+    </EditForm>
+}
+
+@code {
+    List<Cliente> clientes;
+    Cliente clienteActual;
+
+    protected override async Task OnInitializedAsync()
+    {
+        clientes = await db.Clientes.ToListAsync();
+    }
+
+    void NuevoCliente()
+    {
+        clienteActual = new Cliente();
+    }
+
+    void EditarCliente(Cliente c)
+    {
+        clienteActual = new Cliente
+        {
+            IdCliente = c.IdCliente,
+            Nombre = c.Nombre,
+            Cedula = c.Cedula,
+            Telefono = c.Telefono,
+            Direccion = c.Direccion,
+            Preferencias = c.Preferencias
+        };
+    }
+
+    async Task GuardarCliente()
+    {
+        if (clienteActual.IdCliente == 0)
+        {
+            db.Clientes.Add(clienteActual);
+        }
+        else
+        {
+            db.Clientes.Update(clienteActual);
+        }
+
+        await db.SaveChangesAsync();
+        clientes = await db.Clientes.ToListAsync();
+        clienteActual = null;
+    }
+
+    async Task EliminarCliente(int id)
+    {
+        var cliente = await db.Clientes.FindAsync(id);
+        if (cliente != null)
+        {
+            db.Clientes.Remove(cliente);
+            await db.SaveChangesAsync();
+            clientes = await db.Clientes.ToListAsync();
+        }
+    }
+}
+ *@

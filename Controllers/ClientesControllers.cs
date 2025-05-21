@@ -1,4 +1,95 @@
-﻿using BarberiaAPI.Model;
+﻿using Microsoft.AspNetCore.Mvc;
+using MySqlConnector;
+using System.Data;
+using BarberiaAPI.Services;
+using BarberiaAPI.Model;
+
+namespace BarberiaAPI.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ClientesController : ControllerBase
+    {
+        private readonly BarberiaConexion _db;
+        public ClientesController(BarberiaConexion db) => _db = db;
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var dt = _db.EjecutarConsulta("SELECT * FROM clientes");
+            var lista = dt.ToDictionaryList();
+            return Ok(lista);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            var dt = _db.EjecutarConsulta(
+                "SELECT * FROM clientes WHERE id_cliente = @id",
+                new[] { new MySqlParameter("@id", id) }
+            );
+            if (dt.Rows.Count == 0)
+                return NotFound();
+
+            var item = dt.ToDictionaryList().First();
+            return Ok(item);
+        }
+
+        [HttpPost]
+        public IActionResult Create(Cliente cli)
+        {
+            var sql = @"INSERT INTO clientes 
+                        (nombre, cedula, telefono, direccion, preferencias)
+                        VALUES (@n,@c,@t,@d,@p)";
+            var p = new[]
+            {
+                new MySqlParameter("@n", cli.Nombre),
+                new MySqlParameter("@c", cli.Cedula),
+                new MySqlParameter("@t", cli.Telefono ?? (object)DBNull.Value),
+                new MySqlParameter("@d", cli.Direccion ?? (object)DBNull.Value),
+                new MySqlParameter("@p", cli.Preferencias ?? (object)DBNull.Value),
+            };
+            var filas = _db.EjecutarComando(sql, p);
+            return CreatedAtAction(nameof(Get), new { id = cli.IdCliente }, new { filas });
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, Cliente cli)
+        {
+            var sql = @"UPDATE clientes SET 
+                        nombre=@n, cedula=@c, telefono=@t, 
+                        direccion=@d, preferencias=@p
+                        WHERE id_cliente=@id";
+            var p = new[]
+            {
+                new MySqlParameter("@n", cli.Nombre),
+                new MySqlParameter("@c", cli.Cedula),
+                new MySqlParameter("@t", cli.Telefono ?? (object)DBNull.Value),
+                new MySqlParameter("@d", cli.Direccion ?? (object)DBNull.Value),
+                new MySqlParameter("@p", cli.Preferencias ?? (object)DBNull.Value),
+                new MySqlParameter("@id", id),
+            };
+            var filas = _db.EjecutarComando(sql, p);
+            if (filas == 0) return NotFound();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var filas = _db.EjecutarComando(
+                "DELETE FROM clientes WHERE id_cliente=@id",
+                new[] { new MySqlParameter("@id", id) }
+            );
+            if (filas == 0) return NotFound();
+            return NoContent();
+        }
+    }
+}
+
+
+/*
+using BarberiaAPI.Model;
 using BarberiaAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -50,4 +141,4 @@ namespace BarberiaAPI.Controllers
         }
     }
 }
-
+*/

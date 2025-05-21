@@ -12,33 +12,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Cliente"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Cliente"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Cliente"
-                  }
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -67,24 +41,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Cliente"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Cliente"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Cliente"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -107,24 +64,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Cliente"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Cliente"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Cliente"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -197,33 +137,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Gasto"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Gasto"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Gasto"
-                  }
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -252,24 +166,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Gasto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Gasto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Gasto"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -292,24 +189,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Gasto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Gasto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Gasto"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -382,33 +262,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Horario"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Horario"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Horario"
-                  }
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -437,24 +291,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Horario"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Horario"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Horario"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -477,24 +314,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Horario"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Horario"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Horario"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -567,33 +387,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Pago"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Pago"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Pago"
-                  }
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -622,24 +416,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pago"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pago"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pago"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -662,24 +439,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pago"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pago"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pago"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -752,33 +512,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Rol"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Rol"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Rol"
-                  }
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -807,24 +541,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Rol"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Rol"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Rol"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -847,24 +564,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Rol"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Rol"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Rol"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -937,33 +637,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Turno"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Turno"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Turno"
-                  }
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -992,24 +666,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Turno"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Turno"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Turno"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -1032,24 +689,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Turno"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Turno"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Turno"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -1122,33 +762,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Usuario"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Usuario"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Usuario"
-                  }
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -1177,24 +791,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Usuario"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Usuario"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Usuario"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -1217,24 +814,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Usuario"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Usuario"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Usuario"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -1306,7 +886,7 @@
       "Cliente": {
         "type": "object",
         "properties": {
-          "id": {
+          "idCliente": {
             "type": "integer",
             "format": "int32"
           },
@@ -1330,7 +910,7 @@
             "type": "string",
             "nullable": true
           },
-          "fechaRegistro": {
+          "fecha_Registro": {
             "type": "string",
             "format": "date-time"
           }
@@ -1340,13 +920,14 @@
       "Gasto": {
         "type": "object",
         "properties": {
-          "id": {
+          "idGasto": {
             "type": "integer",
             "format": "int32"
           },
           "monto": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "nullable": true
           },
           "fecha": {
             "type": "string",
@@ -1366,11 +947,11 @@
       "Horario": {
         "type": "object",
         "properties": {
-          "id": {
+          "idHorario": {
             "type": "integer",
             "format": "int32"
           },
-          "usuarioId": {
+          "idUsuario": {
             "type": "integer",
             "format": "int32"
           },
@@ -1380,11 +961,13 @@
           },
           "horaInicio": {
             "type": "string",
-            "format": "date-span"
+            "format": "date-span",
+            "nullable": true
           },
           "horaFin": {
             "type": "string",
-            "format": "date-span"
+            "format": "date-span",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1392,17 +975,18 @@
       "Pago": {
         "type": "object",
         "properties": {
-          "id": {
+          "idPago": {
             "type": "integer",
             "format": "int32"
           },
-          "turnoId": {
+          "idTurno": {
             "type": "integer",
             "format": "int32"
           },
           "monto": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "nullable": true
           },
           "metodoPago": {
             "type": "string",
@@ -1418,7 +1002,7 @@
       "Rol": {
         "type": "object",
         "properties": {
-          "id": {
+          "idRol": {
             "type": "integer",
             "format": "int32"
           },
@@ -1436,15 +1020,15 @@
       "Turno": {
         "type": "object",
         "properties": {
-          "id": {
+          "idTurno": {
             "type": "integer",
             "format": "int32"
           },
-          "clienteId": {
+          "idCliente": {
             "type": "integer",
             "format": "int32"
           },
-          "usuarioId": {
+          "idUsuario": {
             "type": "integer",
             "format": "int32"
           },
@@ -1462,7 +1046,8 @@
           },
           "precio": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "nullable": true
           },
           "notas": {
             "type": "string",
@@ -1474,11 +1059,19 @@
       "Usuario": {
         "type": "object",
         "properties": {
-          "id": {
+          "id_Usuario": {
             "type": "integer",
             "format": "int32"
           },
-          "nombreUsuario": {
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "cedula": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
             "type": "string",
             "nullable": true
           },
@@ -1486,13 +1079,9 @@
             "type": "string",
             "nullable": true
           },
-          "rolId": {
+          "id_Rol": {
             "type": "integer",
             "format": "int32"
-          },
-          "nombre": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false

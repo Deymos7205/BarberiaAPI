@@ -1,49 +1,29 @@
 [
   {
     "ContainingType": "BarberiaAPI.Controllers.ClientesController",
-    "Method": "Get",
+    "Method": "GetAll",
     "RelativePath": "api/Clientes",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BarberiaAPI.Model.Cliente, BarberiaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.ClientesController",
-    "Method": "Post",
+    "Method": "Create",
     "RelativePath": "api/Clientes",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "cliente",
+        "Name": "cli",
         "Type": "BarberiaAPI.Model.Cliente",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "BarberiaAPI.Model.Cliente",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.ClientesController",
@@ -59,21 +39,11 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "BarberiaAPI.Model.Cliente",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.ClientesController",
-    "Method": "Put",
+    "Method": "Update",
     "RelativePath": "api/Clientes/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -85,7 +55,7 @@
         "IsRequired": true
       },
       {
-        "Name": "update",
+        "Name": "cli",
         "Type": "BarberiaAPI.Model.Cliente",
         "IsRequired": true
       }
@@ -110,49 +80,29 @@
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.GastosController",
-    "Method": "Get",
+    "Method": "GetAll",
     "RelativePath": "api/Gastos",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BarberiaAPI.Model.Gasto, BarberiaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.GastosController",
-    "Method": "Post",
+    "Method": "Create",
     "RelativePath": "api/Gastos",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "gasto",
+        "Name": "g",
         "Type": "BarberiaAPI.Model.Gasto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "BarberiaAPI.Model.Gasto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.GastosController",
@@ -168,21 +118,11 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "BarberiaAPI.Model.Gasto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.GastosController",
-    "Method": "Put",
+    "Method": "Update",
     "RelativePath": "api/Gastos/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -194,7 +134,7 @@
         "IsRequired": true
       },
       {
-        "Name": "update",
+        "Name": "g",
         "Type": "BarberiaAPI.Model.Gasto",
         "IsRequired": true
       }
@@ -219,49 +159,29 @@
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.HorariosController",
-    "Method": "Get",
+    "Method": "GetAll",
     "RelativePath": "api/Horarios",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BarberiaAPI.Model.Horario, BarberiaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.HorariosController",
-    "Method": "Post",
+    "Method": "Create",
     "RelativePath": "api/Horarios",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "horario",
+        "Name": "h",
         "Type": "BarberiaAPI.Model.Horario",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "BarberiaAPI.Model.Horario",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.HorariosController",
@@ -277,21 +197,11 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "BarberiaAPI.Model.Horario",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.HorariosController",
-    "Method": "Put",
+    "Method": "Update",
     "RelativePath": "api/Horarios/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -303,7 +213,7 @@
         "IsRequired": true
       },
       {
-        "Name": "update",
+        "Name": "h",
         "Type": "BarberiaAPI.Model.Horario",
         "IsRequired": true
       }
@@ -328,49 +238,29 @@
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.PagosController",
-    "Method": "Get",
+    "Method": "GetAll",
     "RelativePath": "api/Pagos",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BarberiaAPI.Model.Pago, BarberiaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.PagosController",
-    "Method": "Post",
+    "Method": "Create",
     "RelativePath": "api/Pagos",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "pago",
+        "Name": "p",
         "Type": "BarberiaAPI.Model.Pago",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "BarberiaAPI.Model.Pago",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.PagosController",
@@ -386,21 +276,11 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "BarberiaAPI.Model.Pago",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.PagosController",
-    "Method": "Put",
+    "Method": "Update",
     "RelativePath": "api/Pagos/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -412,7 +292,7 @@
         "IsRequired": true
       },
       {
-        "Name": "update",
+        "Name": "p",
         "Type": "BarberiaAPI.Model.Pago",
         "IsRequired": true
       }
@@ -437,27 +317,17 @@
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.RolesController",
-    "Method": "Get",
+    "Method": "GetAll",
     "RelativePath": "api/Roles",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BarberiaAPI.Model.Rol, BarberiaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.RolesController",
-    "Method": "Post",
+    "Method": "Create",
     "RelativePath": "api/Roles",
     "HttpMethod": "POST",
     "IsController": true,
@@ -469,17 +339,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "BarberiaAPI.Model.Rol",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.RolesController",
@@ -495,21 +355,11 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "BarberiaAPI.Model.Rol",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.RolesController",
-    "Method": "Put",
+    "Method": "Update",
     "RelativePath": "api/Roles/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -521,7 +371,7 @@
         "IsRequired": true
       },
       {
-        "Name": "update",
+        "Name": "rol",
         "Type": "BarberiaAPI.Model.Rol",
         "IsRequired": true
       }
@@ -546,49 +396,29 @@
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.TurnosController",
-    "Method": "Get",
+    "Method": "GetAll",
     "RelativePath": "api/Turnos",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BarberiaAPI.Model.Turno, BarberiaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.TurnosController",
-    "Method": "Post",
+    "Method": "Create",
     "RelativePath": "api/Turnos",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "turno",
+        "Name": "t",
         "Type": "BarberiaAPI.Model.Turno",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "BarberiaAPI.Model.Turno",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.TurnosController",
@@ -604,21 +434,11 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "BarberiaAPI.Model.Turno",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.TurnosController",
-    "Method": "Put",
+    "Method": "Update",
     "RelativePath": "api/Turnos/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -630,7 +450,7 @@
         "IsRequired": true
       },
       {
-        "Name": "update",
+        "Name": "t",
         "Type": "BarberiaAPI.Model.Turno",
         "IsRequired": true
       }
@@ -655,49 +475,29 @@
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.UsuariosController",
-    "Method": "Get",
+    "Method": "GetAll",
     "RelativePath": "api/Usuarios",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BarberiaAPI.Model.Usuario, BarberiaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.UsuariosController",
-    "Method": "Post",
+    "Method": "Create",
     "RelativePath": "api/Usuarios",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "usuario",
+        "Name": "u",
         "Type": "BarberiaAPI.Model.Usuario",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "BarberiaAPI.Model.Usuario",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.UsuariosController",
@@ -713,21 +513,11 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "BarberiaAPI.Model.Usuario",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarberiaAPI.Controllers.UsuariosController",
-    "Method": "Put",
+    "Method": "Update",
     "RelativePath": "api/Usuarios/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -739,7 +529,7 @@
         "IsRequired": true
       },
       {
-        "Name": "update",
+        "Name": "u",
         "Type": "BarberiaAPI.Model.Usuario",
         "IsRequired": true
       }

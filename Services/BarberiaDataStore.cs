@@ -1,4 +1,5 @@
-﻿using BarberiaAPI.Model;
+﻿/*
+ using BarberiaAPI.Model;
 
 namespace BarberiaAPI.Services
 {
@@ -44,3 +45,4 @@ namespace BarberiaAPI.Services
     }
 }
 
+*/

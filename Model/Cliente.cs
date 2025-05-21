@@ -1,13 +1,13 @@
 ﻿namespace BarberiaAPI.Model
 {
     public class Cliente{
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Cedula { get; set; }
-        public string Telefono { get; set; }
-        public string Direccion { get; set; }
-        public string Preferencias { get; set; }
-        public DateTime FechaRegistro { get; set; }
+        public int IdCliente { get; set; }
+        public string Nombre { get; set; } = default!;
+        public string Cedula { get; set; } = default!;
+        public string? Telefono { get; set; }
+        public string? Direccion { get; set; }
+        public string? Preferencias { get; set; }
+        public DateTime Fecha_Registro { get; set; }
     }
 }
 
