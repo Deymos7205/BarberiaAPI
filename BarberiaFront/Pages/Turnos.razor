@@ -1,0 +1,248 @@
+﻿@page "/turnos"
+
+@using BarberiaFront.Models
+@using BarberiaFront.Services
+@inject TurnoService TurnoService
+@inject ClienteService ClienteService // Inyectar ClienteService
+@inject IJSRuntime JsRuntime
+
+<h3>Gestión de Turnos</h3>
+
+@if (turnos == null || clientes == null || usuarios == null)
+{
+    <p><em>Cargando datos...</em></p>
+}
+else if (!turnos.Any())
+{
+    <p>No hay turnos registrados.</p>
+}
+else
+{
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ID Turno</th>
+                <th>Cliente</th>
+                <th>Barbero</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Tipo de Corte</th>
+                <th>Precio</th>
+                <th>Notas</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var turno in turnos)
+            {
+                <tr>
+                    <td>@turno.Id</td>
+                    <td>@(clientes?.FirstOrDefault(c => c.Id == turno.Id)?.Nombre)</td>
+                    <td>@(usuarios?.FirstOrDefault(u => u.Id == turno.UsuarioId)?.Nombre)</td> 
+                    <td>@turno.Fecha.ToShortDateString()</td>
+                    <td>@turno.Hora.ToString(@"hh\:mm")</td>
+                    <td>@turno.TipoCorte</td>
+                    <td>@turno.Precio.ToString("C")</td> 
+                    <td>@turno.Notas</td>
+                    <td>
+                        <button class="btn btn-info btn-sm" @onclick="() => EditTurno(turno)">Editar</button>
+                        <button class="btn btn-danger btn-sm" @onclick="() => DeleteTurno(turno.Id)">Eliminar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<h4>@((nuevoTurno.Id == 0) ? "Agregar Nuevo Turno" : "Editar Turno")</h4>
+<EditForm Model="@nuevoTurno" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="cliente">Cliente:</label>
+        <InputSelect id="cliente" class="form-control" @bind-Value="nuevoTurno.Id">
+            <option value="0">Seleccione un Cliente</option>
+            @if (clientes != null)
+            {
+                @foreach (var cliente in clientes)
+                {
+                    <option value="@cliente.Id">@cliente.Nombre @cliente.Cedula</option>
+                }
+            }
+        </InputSelect>
+    </div>
+
+    <div class="form-group">
+        <label for="usuario">Barbero:</label>
+        <InputSelect id="usuario" class="form-control" @bind-Value="nuevoTurno.UsuarioId">
+            <option value="0">Seleccione un Barbero</option>
+            @if (usuarios != null)
+            {
+                @foreach (var usuario in usuarios)
+                {
+                    <option value="@usuario.Id">@usuario.Nombre</option>
+                }
+            }
+        </InputSelect>
+    </div>
+
+    <div class="form-group">
+        <label for="fecha">Fecha:</label>
+        <InputDate id="fecha" class="form-control" @bind-Value="nuevoTurno.Fecha" />
+    </div>
+
+    <div class="form-group">
+        <label for="hora">Hora:</label>
+        @* InputTime es para TimeOnly, para TimeSpan necesitas un custom Input, o InputText con parseo manual *@
+        <InputText id="hora" class="form-control" @bind-Value="horaString" />
+        <small class="form-text text-muted">Formato: HH:mm (ej. 14:30)</small>
+    </div>
+
+    <div class="form-group">
+        <label for="tipoCorte">Tipo de Corte:</label>
+        <InputText id="tipoCorte" class="form-control" @bind-Value="nuevoTurno.TipoCorte" />
+    </div>
+
+    <div class="form-group">
+        <label for="precio">Precio:</label>
+        <InputNumber id="precio" class="form-control" @bind-Value="nuevoTurno.Precio" />
+    </div>
+
+    <div class="form-group">
+        <label for="notas">Notas:</label>
+        <InputTextArea id="notas" class="form-control" @bind-Value="nuevoTurno.Notas" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success">
+        @((nuevoTurno.Id == 0) ? "Guardar Turno" : "Actualizar Turno")
+    </button>
+    @if (nuevoTurno.Id != 0)
+    {
+        <button type="button" class="btn btn-secondary ml-2" @onclick="ClearForm">Cancelar Edición</button>
+    }
+</EditForm>
+
+@code {
+    private List<Turno> turnos;
+    private List<Cliente> clientes; // Para el dropdown de clientes y para mostrar nombres
+    private List<Usuario> usuarios; // Para el dropdown de usuarios (barberos) y para mostrar nombres
+    private Turno nuevoTurno = new Turno();
+    private string horaString; // Para manejar la conversión de TimeSpan a string y viceversa
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadTurnos();
+        await LoadClientes();
+    }
+
+    private async Task LoadTurnos()
+    {
+        try
+        {
+            turnos = await TurnoService.GetTurnos();
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"Error al cargar turnos: {ex.Message}");
+            turnos = new List<Turno>();
+        }
+    }
+
+    private async Task LoadClientes()
+    {
+        try
+        {
+            clientes = await ClienteService.GetClientes();
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"Error al cargar clientes para dropdown: {ex.Message}");
+            clientes = new List<Cliente>();
+        }
+    }
+
+
+
+
+    private async Task HandleValidSubmit()
+    {
+        try
+        {
+            // Convertir horaString a TimeSpan antes de enviar
+            if (TimeSpan.TryParse(horaString, out TimeSpan parsedTime))
+            {
+                nuevoTurno.Hora = parsedTime;
+            }
+            else
+            {
+                // Manejar error de formato de hora, quizás mostrar un mensaje al usuario
+                Console.WriteLine("Formato de hora inválido.");
+                // O usa JsRuntime.InvokeVoidAsync para mostrar un alert
+                await JsRuntime.InvokeVoidAsync("alert", "Error: Formato de hora inválido. Use HH:mm.");
+                return; // No continuar si la hora es inválida
+            }
+
+            if (nuevoTurno.Id == 0)
+            {
+                await TurnoService.AddTurno(nuevoTurno);
+            }
+            else
+            {
+                await TurnoService.UpdateTurno(nuevoTurno.Id, nuevoTurno);
+            }
+
+            ClearForm();
+            await LoadTurnos(); // Vuelve a cargar los turnos para reflejar los cambios
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"Error al guardar turno: {ex.Message}");
+            await JsRuntime.InvokeVoidAsync("alert", $"Error al guardar turno: {ex.Message}");
+        }
+    }
+
+    private void EditTurno(Turno turno)
+    {
+        // Al editar, copiamos las propiedades. Es importante crear una nueva instancia
+        // para evitar modificar el objeto directamente en la lista `turnos` antes de guardar.
+        nuevoTurno = new Turno
+        {
+            Id = turno.Id,
+            ClienteId = turno.ClienteId,
+            UsuarioId = turno.UsuarioId,
+            Fecha = turno.Fecha,
+            Hora = turno.Hora,
+            TipoCorte = turno.TipoCorte,
+            Precio = turno.Precio,
+            Notas = turno.Notas
+
+        };
+        horaString = nuevoTurno.Hora.ToString(@"hh\:mm"); // Carga la hora como string para el InputText
+    }
+
+    private async Task DeleteTurno(int id)
+    {
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "¿Estás seguro de que quieres eliminar este turno?");
+        if (confirmed)
+        {
+            try
+            {
+                await TurnoService.DeleteTurno(id);
+                await LoadTurnos(); // Vuelve a cargar los turnos
+                ClearForm();
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine($"Error al eliminar turno: {ex.Message}");
+                await JsRuntime.InvokeVoidAsync("alert", $"Error al eliminar turno: {ex.Message}");
+            }
+        }
+    }
+
+    private void ClearForm()
+    {
+        nuevoTurno = new Turno(); 
+        horaString = ""; 
+    }
+}
