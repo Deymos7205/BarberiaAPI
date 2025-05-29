@@ -1,0 +1,53 @@
+﻿@page "/horarios"
+@inject IHorarioService HorarioService
+
+<h3>Horarios</h3>
+
+@if (horarios == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <a class="btn btn-primary mb-3" href="/horarios/form">Nuevo Horario</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Día</th>
+                <th>Hora Inicio</th>
+                <th>Hora Fin</th>
+                <th>Usuario</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var h in horarios)
+            {
+                <tr>
+                    <td>@h.Dia</td>
+                    <td>@h.HoraInicio</td>
+                    <td>@h.HoraFin</td>
+                    <td>@h.UsuarioId</td>
+                    <td>
+                        <a href="/horarios/detalle/@h.Id">Detalle</a> |
+                        <a href="/horarios/form/@h.Id">Editar</a> |
+                        <button class="btn btn-link p-0" @onclick="() => Eliminar(h.Id)">Eliminar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<Horario> horarios;
+
+    protected override async Task OnInitializedAsync() =>
+        horarios = await HorarioService.ObtenerTodos();
+
+    private async Task Eliminar(int id)
+    {
+        await HorarioService.Eliminar(id);
+        horarios = await HorarioService.ObtenerTodos();
+    }
+}

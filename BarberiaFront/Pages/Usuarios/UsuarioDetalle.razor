@@ -1,0 +1,31 @@
+﻿@page "/usuarios/detalle/{Id:int}"
+@inject IUsuarioService UsuarioService
+
+<h3>Detalle de Usuario</h3>
+
+@if (ent == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <dl class="row">
+        <dt class="col-sm-3">Nombre</dt>
+        <dd class="col-sm-9">@ent.Nombre</dd>
+
+        <dt class="col-sm-3">Email</dt>
+        <dd class="col-sm-9">@ent.Email</dd>
+
+        <dt class="col-sm-3">Rol (ID)</dt>
+        <dd class="col-sm-9">@ent.RolId</dd>
+    </dl>
+    <a class="btn btn-secondary" href="/usuarios">Volver</a>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Usuario ent;
+
+    protected override async Task OnInitializedAsync() =>
+        ent = await UsuarioService.ObtenerPorId(Id);
+}

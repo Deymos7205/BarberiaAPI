@@ -1,0 +1,49 @@
+﻿@page "/pagos/form/{Id:int?}"
+@inject IPagoService PagoService
+@inject NavigationManager Nav
+
+<h3>@(Id == null ? "Nuevo Pago" : "Editar Pago")</h3>
+
+<EditForm Model="ent" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label">Monto</label>
+        <InputNumber @bind-Value="ent.Monto" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Fecha</label>
+        <InputDate @bind-Value="ent.Fecha" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Usuario (ID)</label>
+        <InputNumber @bind-Value="ent.UsuarioId" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-secondary ms-2" @onclick="() => Nav.NavigateTo("/pagos")">Cancelar</button>
+</EditForm>
+
+@code {
+    [Parameter] public int? Id { get; set; }
+    private Pago ent = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id.HasValue)
+            ent = await PagoService.ObtenerPorId(Id.Value);
+    }
+
+    private async Task Guardar()
+    {
+        if (Id == null)
+            await PagoService.Crear(ent);
+        else
+            await PagoService.Actualizar(ent);
+
+        Nav.NavigateTo("/pagos");
+    }
+}

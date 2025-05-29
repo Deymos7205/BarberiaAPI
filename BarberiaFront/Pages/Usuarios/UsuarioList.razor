@@ -1,0 +1,51 @@
+﻿@page "/usuarios"
+@inject IUsuarioService UsuarioService
+
+<h3>Usuarios</h3>
+
+@if (usuarios == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <a class="btn btn-primary mb-3" href="/usuarios/form">Nuevo Usuario</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol (ID)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var u in usuarios)
+            {
+                <tr>
+                    <td>@u.Nombre</td>
+                    <td>@u.Email</td>
+                    <td>@u.RolId</td>
+                    <td>
+                        <a href="/usuarios/detalle/@u.Id">Detalle</a> |
+                        <a href="/usuarios/form/@u.Id">Editar</a> |
+                        <button class="btn btn-link p-0" @onclick="() => Eliminar(u.Id)">Eliminar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<Usuario> usuarios;
+
+    protected override async Task OnInitializedAsync() =>
+        usuarios = await UsuarioService.ObtenerTodos();
+
+    private async Task Eliminar(int id)
+    {
+        await UsuarioService.Eliminar(id);
+        usuarios = await UsuarioService.ObtenerTodos();
+    }
+}

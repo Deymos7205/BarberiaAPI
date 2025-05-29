@@ -1,0 +1,55 @@
+﻿@page "/clientes"
+@inject IClienteService ClienteService
+
+<h3>Clientes</h3>
+
+@if (clientes == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <a class="btn btn-primary mb-3" href="/clientes/form">Nuevo Cliente</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cédula</th>
+                <th>Teléfono</th>
+                <th>Dirección</th>
+                <th>Registro</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in clientes)
+            {
+                <tr>
+                    <td>@c.Nombre</td>
+                    <td>@c.Cedula</td>
+                    <td>@c.Telefono</td>
+                    <td>@c.Direccion</td>
+                    <td>@c.FechaRegistro.ToShortDateString()</td>
+                    <td>
+                        <a href="/clientes/detalle/@c.Id">Detalle</a> |
+                        <a href="/clientes/form/@c.Id">Editar</a> |
+                        <button class="btn btn-link p-0" @onclick="() => Eliminar(c.Id)">Eliminar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<Cliente> clientes;
+
+    protected override async Task OnInitializedAsync() =>
+        clientes = await ClienteService.ObtenerTodos();
+
+    private async Task Eliminar(int id)
+    {
+        await ClienteService.Eliminar(id);
+        clientes = await ClienteService.ObtenerTodos();
+    }
+}

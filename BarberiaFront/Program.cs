@@ -22,7 +22,18 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https:/
 
 // 2. Registrar tus servicios personalizados
 // Aquí debes registrar cada servicio que crees para interactuar con tus controladores de la API.
-builder.Services.AddScoped<ClienteService>();
+builder.Services.AddScoped<IClienteService, ClienteService>();
+builder.Services.AddScoped<IGastoService, GastoService>();
+builder.Services.AddScoped<IHorarioService, HorarioService>();
+builder.Services.AddScoped<IPagoService, PagoService>();
+builder.Services.AddScoped<IRolService, RolService>();
+builder.Services.AddScoped<ITurnoService, TurnoService>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+
+
+await builder.Build().RunAsync();
+
+
 // builder.Services.AddScoped<GastoService>(); // Descomenta y agrega según los servicios que se creen
 // builder.Services.AddScoped<HorarioService>();
 // builder.Services.AddScoped<PagoService>();
@@ -32,4 +43,3 @@ builder.Services.AddScoped<ClienteService>();
 
 
 
-await builder.Build().RunAsync();

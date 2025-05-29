@@ -1,0 +1,31 @@
+﻿@page "/turnos/detalle/{Id:int}"
+@inject ITurnoService TurnoService
+
+<h3>Detalle de Turno</h3>
+
+@if (ent == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <dl class="row">
+        <dt class="col-sm-3">Fecha Inicio</dt>
+        <dd class="col-sm-9">@ent.FechaInicio.ToString("f")</dd>
+
+        <dt class="col-sm-3">Fecha Fin</dt>
+        <dd class="col-sm-9">@ent.FechaFin.ToString("f")</dd>
+
+        <dt class="col-sm-3">Usuario (ID)</dt>
+        <dd class="col-sm-9">@ent.UsuarioId</dd>
+    </dl>
+    <a class="btn btn-secondary" href="/turnos">Volver</a>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Turno ent;
+
+    protected override async Task OnInitializedAsync() =>
+        ent = await TurnoService.ObtenerPorId(Id);
+}

@@ -1,0 +1,49 @@
+﻿@page "/gastos/form/{Id:int?}"
+@inject IGastoService GastoService
+@inject NavigationManager Nav
+
+<h3>@(Id == null ? "Nuevo Gasto" : "Editar Gasto")</h3>
+
+<EditForm Model="ent" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label">Descripción</label>
+        <InputText @bind-Value="ent.Descripcion" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Monto</label>
+        <InputNumber @bind-Value="ent.Monto" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Fecha</label>
+        <InputDate @bind-Value="ent.Fecha" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-secondary ms-2" @onclick="() => Nav.NavigateTo("/gastos")">Cancelar</button>
+</EditForm>
+
+@code {
+    [Parameter] public int? Id { get; set; }
+    private Gasto ent = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id.HasValue)
+            ent = await GastoService.ObtenerPorId(Id.Value);
+    }
+
+    private async Task Guardar()
+    {
+        if (Id == null)
+            await GastoService.Crear(ent);
+        else
+            await GastoService.Actualizar(ent);
+
+        Nav.NavigateTo("/gastos");
+    }
+}

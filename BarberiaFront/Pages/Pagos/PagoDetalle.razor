@@ -1,0 +1,31 @@
+﻿@page "/pagos/detalle/{Id:int}"
+@inject IPagoService PagoService
+
+<h3>Detalle de Pago</h3>
+
+@if (ent == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <dl class="row">
+        <dt class="col-sm-3">Monto</dt>
+        <dd class="col-sm-9">@ent.Monto.ToString("C")</dd>
+
+        <dt class="col-sm-3">Fecha</dt>
+        <dd class="col-sm-9">@ent.Fecha.ToString("g")</dd>
+
+        <dt class="col-sm-3">Usuario</dt>
+        <dd class="col-sm-9">@ent.UsuarioId</dd>
+    </dl>
+    <a class="btn btn-secondary" href="/pagos">Volver</a>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Pago ent;
+
+    protected override async Task OnInitializedAsync() =>
+        ent = await PagoService.ObtenerPorId(Id);
+}

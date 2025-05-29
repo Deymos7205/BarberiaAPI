@@ -1,0 +1,54 @@
+﻿@page "/usuarios/form/{Id:int?}"
+@inject IUsuarioService UsuarioService
+@inject NavigationManager Nav
+
+<h3>@(Id == null ? "Nuevo Usuario" : "Editar Usuario")</h3>
+
+<EditForm Model="ent" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <InputText @bind-Value="ent.Nombre" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <InputText @bind-Value="ent.Email" type="email" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <InputText @bind-Value="ent.Password" type="password" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Rol (ID)</label>
+        <InputNumber @bind-Value="ent.RolId" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-secondary ms-2" @onclick="() => Nav.NavigateTo("/usuarios")">Cancelar</button>
+</EditForm>
+
+@code {
+    [Parameter] public int? Id { get; set; }
+    private Usuario ent = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id.HasValue)
+            ent = await UsuarioService.ObtenerPorId(Id.Value);
+    }
+
+    private async Task Guardar()
+    {
+        if (Id == null)
+            await UsuarioService.Crear(ent);
+        else
+            await UsuarioService.Actualizar(ent);
+
+        Nav.NavigateTo("/usuarios");
+    }
+}

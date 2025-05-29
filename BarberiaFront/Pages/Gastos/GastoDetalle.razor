@@ -1,0 +1,31 @@
+﻿@page "/gastos/detalle/{Id:int}"
+@inject IGastoService GastoService
+
+<h3>Detalle de Gasto</h3>
+
+@if (ent == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <dl class="row">
+        <dt class="col-sm-3">Descripción</dt>
+        <dd class="col-sm-9">@ent.Descripcion</dd>
+
+        <dt class="col-sm-3">Monto</dt>
+        <dd class="col-sm-9">@ent.Monto.ToString("C")</dd>
+
+        <dt class="col-sm-3">Fecha</dt>
+        <dd class="col-sm-9">@ent.Fecha.ToString("g")</dd>
+    </dl>
+    <a class="btn btn-secondary" href="/gastos">Volver</a>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Gasto ent;
+
+    protected override async Task OnInitializedAsync() =>
+        ent = await GastoService.ObtenerPorId(Id);
+}

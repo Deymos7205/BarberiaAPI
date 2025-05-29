@@ -1,0 +1,49 @@
+﻿@page "/roles"
+@inject IRolService RolService
+
+<h3>Roles</h3>
+
+@if (roles == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <a class="btn btn-primary mb-3" href="/roles/form">Nuevo Rol</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var r in roles)
+            {
+                <tr>
+                    <td>@r.Nombre</td>
+                    <td>@r.Descripcion</td>
+                    <td>
+                        <a href="/roles/detalle/@r.Id">Detalle</a> |
+                        <a href="/roles/form/@r.Id">Editar</a> |
+                        <button class="btn btn-link p-0" @onclick="() => Eliminar(r.Id)">Eliminar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<Rol> roles;
+
+    protected override async Task OnInitializedAsync() =>
+        roles = await RolService.ObtenerTodos();
+
+    private async Task Eliminar(int id)
+    {
+        await RolService.Eliminar(id);
+        roles = await RolService.ObtenerTodos();
+    }
+}

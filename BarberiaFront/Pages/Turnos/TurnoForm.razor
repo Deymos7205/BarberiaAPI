@@ -1,0 +1,65 @@
+﻿@page "/turnos/form/{Id:int?}"
+@inject ITurnoService TurnoService
+@inject NavigationManager Nav
+
+<h3>@(Id == null ? "Nuevo Turno" : "Editar Turno")</h3>
+
+<EditForm Model="ent" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label">Fecha Inicio</label>
+        <InputDate @bind-Value="dateInicio" class="form-control" />
+        <InputText @bind-Value="timeInicio" type="time" class="form-control mt-1" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Fecha Fin</label>
+        <InputDate @bind-Value="dateFin" class="form-control" />
+        <InputText @bind-Value="timeFin" type="time" class="form-control mt-1" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Usuario (ID)</label>
+        <InputNumber @bind-Value="ent.UsuarioId" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-secondary ms-2" @onclick="() => Nav.NavigateTo("/turnos")">Cancelar</button>
+</EditForm>
+
+@code {
+    [Parameter] public int? Id { get; set; }
+    private Turno ent = new();
+    private DateTime dateInicio;
+    private DateTime dateFin;
+    private string timeInicio = "09:00";
+    private string timeFin = "17:00";
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id.HasValue)
+        {
+            ent = await TurnoService.ObtenerPorId(Id.Value);
+            dateInicio = ent.FechaInicio.Date;
+            timeInicio = ent.FechaInicio.ToString("HH:mm");
+            dateFin = ent.FechaFin.Date;
+            timeFin = ent.FechaFin.ToString("HH:mm");
+        }
+    }
+
+    private async Task Guardar()
+    {
+        // Combinar fecha y hora
+        ent.FechaInicio = dateInicio.Add(TimeSpan.Parse(timeInicio));
+        ent.FechaFin = dateFin.Add(TimeSpan.Parse(timeFin));
+
+        if (Id == null)
+            await TurnoService.Crear(ent);
+        else
+            await TurnoService.Actualizar(ent);
+
+        Nav.NavigateTo("/turnos");
+    }
+}

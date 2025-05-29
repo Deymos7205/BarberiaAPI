@@ -1,0 +1,51 @@
+﻿@page "/gastos"
+@inject IGastoService GastoService
+
+<h3>Gastos</h3>
+
+@if (gastos == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <a class="btn btn-primary mb-3" href="/gastos/form">Nuevo Gasto</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Descripción</th>
+                <th>Monto</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var g in gastos)
+            {
+                <tr>
+                    <td>@g.Descripcion</td>
+                    <td>@g.Monto.ToString("C")</td>
+                    <td>@g.Fecha.ToShortDateString()</td>
+                    <td>
+                        <a href="/gastos/detalle/@g.Id">Detalle</a> |
+                        <a href="/gastos/form/@g.Id">Editar</a> |
+                        <button class="btn btn-link p-0" @onclick="() => Eliminar(g.Id)">Eliminar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<Gasto> gastos;
+
+    protected override async Task OnInitializedAsync() =>
+        gastos = await GastoService.ObtenerTodos();
+
+    private async Task Eliminar(int id)
+    {
+        await GastoService.Eliminar(id);
+        gastos = await GastoService.ObtenerTodos();
+    }
+}

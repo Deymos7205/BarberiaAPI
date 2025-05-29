@@ -1,0 +1,34 @@
+﻿@page "/horarios/detalle/{Id:int}"
+@inject IHorarioService HorarioService
+
+<h3>Detalle de Horario</h3>
+
+@if (ent == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <dl class="row">
+        <dt class="col-sm-3">Día</dt>
+        <dd class="col-sm-9">@ent.Dia</dd>
+
+        <dt class="col-sm-3">Hora Inicio</dt>
+        <dd class="col-sm-9">@ent.HoraInicio</dd>
+
+        <dt class="col-sm-3">Hora Fin</dt>
+        <dd class="col-sm-9">@ent.HoraFin</dd>
+
+        <dt class="col-sm-3">Usuario</dt>
+        <dd class="col-sm-9">@ent.UsuarioId</dd>
+    </dl>
+    <a class="btn btn-secondary" href="/horarios">Volver</a>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Horario ent;
+
+    protected override async Task OnInitializedAsync() =>
+        ent = await HorarioService.ObtenerPorId(Id);
+}

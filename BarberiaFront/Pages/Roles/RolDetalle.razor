@@ -1,0 +1,28 @@
+﻿@page "/roles/detalle/{Id:int}"
+@inject IRolService RolService
+
+<h3>Detalle de Rol</h3>
+
+@if (ent == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <dl class="row">
+        <dt class="col-sm-3">Nombre</dt>
+        <dd class="col-sm-9">@ent.Nombre</dd>
+
+        <dt class="col-sm-3">Descripción</dt>
+        <dd class="col-sm-9">@ent.Descripcion</dd>
+    </dl>
+    <a class="btn btn-secondary" href="/roles">Volver</a>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Rol ent;
+
+    protected override async Task OnInitializedAsync() =>
+        ent = await RolService.ObtenerPorId(Id);
+}

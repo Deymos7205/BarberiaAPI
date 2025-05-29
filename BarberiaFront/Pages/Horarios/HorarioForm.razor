@@ -1,0 +1,59 @@
+﻿@page "/horarios/form/{Id:int?}"
+@inject IHorarioService HorarioService
+@inject NavigationManager Nav
+
+<h3>@(Id == null ? "Nuevo Horario" : "Editar Horario")</h3>
+
+<EditForm Model="ent" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label">Día</label>
+        <InputSelect @bind-Value="ent.Dia" class="form-select">
+            @foreach (var d in Enum.GetValues<DayOfWeek>())
+            {
+                <option value="@d">@d</option>
+            }
+        </InputSelect>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Hora Inicio</label>
+        <InputTimeSpan @bind-Value="ent.HoraInicio" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Hora Fin</label>
+        <InputTimeSpan @bind-Value="ent.HoraFin" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Usuario</label>
+        <InputNumber @bind-Value="ent.UsuarioId" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-secondary ms-2" @onclick="() => Nav.NavigateTo("/horarios")">Cancelar</button>
+</EditForm>
+
+@code {
+    [Parameter] public int? Id { get; set; }
+    private Horario ent = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id.HasValue)
+            ent = await HorarioService.ObtenerPorId(Id.Value);
+    }
+
+    private async Task Guardar()
+    {
+        if (Id == null)
+            await HorarioService.Crear(ent);
+        else
+            await HorarioService.Actualizar(ent);
+
+        Nav.NavigateTo("/horarios");
+    }
+}
